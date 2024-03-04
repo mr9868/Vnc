@@ -10,7 +10,7 @@ function install(){
       
       [ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
       [ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
-      x-window-manager &" >> ~/.vnc/xstartup && chmod +x ~/.vnc/xstartup && sudo ufw allow 5901 && sudo ufw enabled && sudo ufw reload && vncserver -localhost no :1 && clear;
+      x-window-manager &" >> ~/.vnc/xstartup && chmod +x ~/.vnc/xstartup && sudo ufw allow 5901 && sudo ufw enable && sudo ufw reload && vncserver -localhost no :1 && clear;
   
   echo "VNC installed successfuly !";
   echo "Coded by Mr9868";
