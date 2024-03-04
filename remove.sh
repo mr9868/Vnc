@@ -6,10 +6,10 @@ sudo ufw deny 5901 && sudo ufw enabled && sudo ufw reload;
 echo "Vnc removed successfuly !"
 sleep 10
 }
-echo "Do you wish to install this program?"
-select yn in "Yes" "No"; do
-    case $yn in
-        Yes ) remove; break;;
-        No ) exit;;
-    esac
-done
+printf 'Do you want to remove vnc from your machine (y/n)? '
+read answer
+if [ "$answer" != "${answer#[Yy]}" ] ;then 
+    remove;
+else
+    echo "Nice !"
+fi
