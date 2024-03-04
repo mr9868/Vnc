@@ -1,8 +1,7 @@
 #install function
 function install(){
   sudo apt update && apt upgrade && sudo apt install xfce4 xfce4-goodies && sudo apt install tigervnc-standalone-server && vncserver && vncserver -kill :*;
-  cat << EOF > ~/.vnc/xstartup
-      #!/bin/sh
+      echo "#!/bin/sh
       
       # Start up the standard system desktop
       unset SESSION_MANAGER
@@ -12,8 +11,7 @@ function install(){
       
       [ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
       [ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
-      x-window-manager &
-  EOF
+      x-window-manager &" >> ~/.vnc/xstartup
   
   chmod +x ~/.vnc/xstartup;
   sudo ufw allow 5901 && sudo ufw enabled && sudo ufw reload && vncserver -localhost no :1;
