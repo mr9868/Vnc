@@ -12,4 +12,5 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
     remove;
 else
     echo "Nice !"
+    sleep 5
 fi
