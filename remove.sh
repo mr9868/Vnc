@@ -11,6 +11,7 @@ read answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then 
     remove;
 else
+    clear;
     echo "Nice !"
     sleep 5
 fi
