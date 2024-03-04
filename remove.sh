@@ -4,7 +4,7 @@ rm -rf /etc/vnc;
 rm -rf $HOME/.Xresources;
 sudo ufw deny 5901 && sudo ufw enabled && sudo ufw reload;
 echo "Vnc removed successfuly !"
-sleep 10
+sleep 2
 }
 
 #chrome remove function
@@ -17,7 +17,7 @@ function remove_chrome() {
 
 #prompt for remove google chrome
 function chrome_prompt() {
-REQUIRED_PKG="some-package"
+REQUIRED_PKG="chrome"
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG|grep "install ok installed")
 echo Checking for $REQUIRED_PKG: $PKG_OK
 if [ "" = "$PKG_OK" ]; then
