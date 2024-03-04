@@ -1,5 +1,6 @@
 function remove() {
-vncserver -kill :* && rm -rf ~/.vnc/xstartup;
+rm -rf ~/.vnc/xstartup
+vncserver -kill :*
 rm -rf /etc/vnc;
 rm -rf $HOME/.Xresources;
 sudo apt --fix-broken install && sudo apt update && sudo apt upgrade && sudo apt purge xfce4 xfce4-goodies && sudo apt purge tigervnc-standalone-server 
