@@ -19,8 +19,8 @@ function install(){
   sudo ufw allow 5901 && sudo ufw enabled && sudo ufw reload && vncserver -localhost no :1;
   clear;
   
-  echo "VNC installed successfuly !"
-  echo "Coded by Mr9868"
+  echo "VNC installed successfuly !";
+  echo "Coded by Mr9868";
   sleep 5
 }
 #end of install function
@@ -52,10 +52,10 @@ function chrome_prompt(){
 printf 'Do you want to install vnc to your machine (y/n)? '
   read answer
   if [ "$answer" != "${answer#[Yy]}" ] ;then 
-      install && chrome_prompt
+      install && chrome_prompt;
   else
       clear;
-      echo "See you later !"
+      echo "See you later !";
       sleep 5
   fi
 #end of install prompt
