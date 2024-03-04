@@ -1,6 +1,6 @@
 #install function
-function install() {
-  sudo apt update && apt upgrade && sudo apt install xfce4 xfce4-goodies && sudo apt install tigervnc-standalone-server && vncserver && vncserver -kill :1;
+function install(){
+  sudo apt update && apt upgrade && sudo apt install xfce4 xfce4-goodies && sudo apt install tigervnc-standalone-server && vncserver && vncserver -kill :*;
   cat << EOF > ~/.vnc/xstartup
   #!/bin/sh
   
@@ -26,7 +26,7 @@ function install() {
 #end of install function
 
 #chrome install function
-function install_chrome() {
+function install_chrome(){
   apt install wget && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;
   sudo dpkg -i google-chrome-stable_current_amd64.deb && sudo apt-get install -f 
   echo "Chrome has successfuly installed !"
@@ -35,7 +35,7 @@ function install_chrome() {
 #end of chrome install function
 
 #prompt for install google chrome
-function chrome_prompt() {
+function chrome_prompt(){
   printf 'Do you want to install chrome to your machine (y/n)? '
     read answer
   if [ "$answer" != "${answer#[Yy]}" ] ;then 
