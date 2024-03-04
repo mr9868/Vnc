@@ -1,10 +1,10 @@
 function remove() {
 rm -rf ~/.vnc/xstartup
 vncserver -kill :*
-rm -rf /etc/vnc;
-rm -rf $HOME/.Xresources;
+rm -rf /etc/vnc
+rm -rf $HOME/.Xresources
 sudo apt --fix-broken install && sudo apt update && sudo apt upgrade && sudo apt purge xfce4 xfce4-goodies && sudo apt purge tigervnc-standalone-server 
-sudo ufw deny 5901 && sudo ufw enabled && sudo ufw reload;
+sudo ufw deny 5901 && sudo ufw enable && sudo ufw reload
 }
 
 #chrome remove function
