@@ -19,7 +19,7 @@ REQUIRED_PKG="chrome"
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG|grep "install ok installed")
 
 if [ "" = "$PKG_OK" ]; then
-  clear
+  #clear
   echo "Vnc removed successfuly !"
   sleep 2
 else      
@@ -29,7 +29,7 @@ else
         if [ "$answer" != "${answer#[Yy]}" ] ;then 
             remove_chrome; 
         else
-            clear;
+            #clear;
             echo "Chrome remove rejected !"
             sleep 5
         fi
@@ -45,7 +45,7 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
     remove;
     chrome_prompt;
 else
-    clear;
+    #clear;
     echo "Operation aborted !"
     sleep 5
 fi
