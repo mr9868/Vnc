@@ -19,14 +19,14 @@ function remove_chrome() {
 function chrome_prompt() {
 REQUIRED_PKG="chrome"
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG|grep "install ok installed")
-echo Checking for $REQUIRED_PKG: $PKG_OK
+
 if [ "" = "$PKG_OK" ]; then
   echo "Removed successfuly !"
   sleep 5;
-else
-      
+else      
       printf 'Do you want to remove chrome to your machine (y/n)? '
         read answer
+        echo Checking for $REQUIRED_PKG: $PKG_OK
         if [ "$answer" != "${answer#[Yy]}" ] ;then 
             remove_chrome; 
         else
