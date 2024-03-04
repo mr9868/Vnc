@@ -21,18 +21,19 @@ REQUIRED_PKG="chrome"
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG|grep "install ok installed")
 echo Checking for $REQUIRED_PKG: $PKG_OK
 if [ "" = "$PKG_OK" ]; then
-  echo "No $REQUIRED_PKG. Setting up $REQUIRED_PKG."
-  printf 'Do you want to remove chrome to your machine (y/n)? '
-    read answer
-  if [ "$answer" != "${answer#[Yy]}" ] ;then 
-      remove_chrome; 
-  else
-      clear;
-      echo "Chrome remove rejected !"
-      sleep 5
-  fi
+  echo "Removed successfuly !"
+  sleep 5;
 else
-      echo "Chrome doesn't installed on this machine !"
+      
+      printf 'Do you want to remove chrome to your machine (y/n)? '
+        read answer
+        if [ "$answer" != "${answer#[Yy]}" ] ;then 
+            remove_chrome; 
+        else
+            clear;
+            echo "Chrome remove rejected !"
+            sleep 5
+        fi
       sleep 5
 fi
   
