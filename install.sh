@@ -14,5 +14,5 @@ x-window-manager &
 EOF
 
 chmod +x ~/.vnc/xstartup;
-sudo ufw allow 5901 && sudo ufw reload && vncserver;
+sudo ufw allow 5901 && sudo ufw enabled && sudo ufw reload && vncserver;
 
