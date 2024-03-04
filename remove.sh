@@ -3,8 +3,6 @@ sudo apt update && sudo apt purge xfce4 xfce4-goodies && sudo apt purge tigervnc
 rm -rf /etc/vnc;
 rm -rf $HOME/.Xresources;
 sudo ufw deny 5901 && sudo ufw enabled && sudo ufw reload;
-echo "Vnc removed successfuly !"
-sleep 2
 }
 
 #chrome remove function
@@ -21,8 +19,9 @@ REQUIRED_PKG="chrome"
 PKG_OK=$(dpkg-query -W --showformat='${Status}\n' $REQUIRED_PKG|grep "install ok installed")
 
 if [ "" = "$PKG_OK" ]; then
-  echo "Removed successfuly !"
-  sleep 5;
+  clear
+  echo "Vnc removed successfuly !"
+  sleep 2
 else      
       printf 'Do you want to remove chrome to your machine (y/n)? '
         read answer
@@ -34,7 +33,6 @@ else
             echo "Chrome remove rejected !"
             sleep 5
         fi
-      sleep 5
 fi
   
 }
@@ -48,6 +46,6 @@ if [ "$answer" != "${answer#[Yy]}" ] ;then
     chrome_prompt;
 else
     clear;
-    echo "Nice !"
+    echo "Operation aborted !"
     sleep 5
 fi
