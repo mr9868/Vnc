@@ -2,10 +2,9 @@
 Vnc Auto installer
 How to use :
 ```
-git clone https://github.com/mr9868/vnc
+git clone https://github.com/mr9868/vnc && cd vnc
 ```
-th
-en
+then
 ```
 chmod 777 install.sh && chmod 777 remove.sh
 ```
