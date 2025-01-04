@@ -1,3 +1,4 @@
+SERVER_IP='$(curl -w '\n' ifconfig.me)';
 #install function
 function install(){
   sudo apt update && apt upgrade && sudo apt install xfce4 xfce4-goodies && sudo apt install tigervnc-standalone-server && vncserver && vncserver -kill :* && echo "#!/bin/sh
@@ -13,7 +14,7 @@ function install(){
       x-window-manager &" >> ~/.vnc/xstartup && chmod +x ~/.vnc/xstartup && sudo ufw allow 5901 && sudo ufw enable && sudo ufw reload && vncserver -localhost no :1 && clear;
 
   echo "Download your VNC client on : https://www.realvnc.com/en/connect/download/viewer";
-  echo "Put 'YOURIPADDRESS:5901' to connect the VNC";
+  echo "Put '${SERVER_IP}:5901' to connect the VNC";
   echo "VNC installed successfuly !";
   echo "Coded by Mr9868";
   sleep 5
