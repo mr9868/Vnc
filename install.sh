@@ -1,7 +1,7 @@
 SERVER_IP='$(curl -w '\n' ifconfig.me)';
 #install function
 function install(){
-  sudo apt update && apt upgrade && sudo apt install xfce4 xfce4-goodies && sudo apt install tigervnc-standalone-server && vncserver && vncserver -kill :* && echo "#!/bin/sh
+  sudo apt update && apt upgrade && sudo apt install xfce4 xfce4-goodies && sudo apt install tigervnc-standalone-server && sudo vncserver && sudo vncserver -kill :* && sudo echo "#!/bin/sh
       
       # Start up the standard system desktop
       unset SESSION_MANAGER
@@ -11,7 +11,7 @@ function install(){
       
       [ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
       [ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
-      x-window-manager &" >> ~/.vnc/xstartup && chmod +x ~/.vnc/xstartup && sudo ufw allow 5901 && sudo ufw enable && sudo ufw reload && vncserver -localhost no :1 && clear;
+      x-window-manager &" >> ~/.vnc/xstartup && sudo chmod +x ~/.vnc/xstartup && sudo ufw allow 5901 && sudo ufw enable && sudo ufw reload && sudo vncserver -localhost no :1 && clear;
 
   echo "Download your VNC client on : https://www.realvnc.com/en/connect/download/viewer";
   echo "Put '${SERVER_IP}:5901' to connect the VNC";
@@ -23,7 +23,7 @@ function install(){
 
 #chrome install function
 function install_chrome(){
-  apt install wget && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;
+  sudo apt install wget && sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb;
   sudo dpkg -i google-chrome-stable_current_amd64.deb && sudo apt-get install -f && sudo apt --fix-broken install
   echo "Chrome has successfuly installed !"
   sleep 5
