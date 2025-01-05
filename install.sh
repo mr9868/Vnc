@@ -1,7 +1,7 @@
 SERVER_IP='$(curl -w '\n' ifconfig.me)';
 #install function
 function install(){
-  sudo apt update && apt upgrade && sudo apt install xfce4 xfce4-goodies && sudo apt install tigervnc-standalone-server && sudo vncserver && sudo vncserver -kill :* && sudo echo "#!/bin/sh
+  sudo apt update && sudo apt upgrade && sudo apt install xfce4 xfce4-goodies && sudo apt install tigervnc-standalone-server && sudo vncserver && sudo vncserver -kill :* && sudo echo "#!/bin/sh
       
       # Start up the standard system desktop
       unset SESSION_MANAGER
